@@ -3,127 +3,618 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hileon Budget Tracker — Privacy Policy</title>
+  <title>Privacy Policy — Hileon Budget Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
   <style>
+    :root {
+      --cream: #F7F3EE;
+      --cream-dark: #EDE8E0;
+      --charcoal: #2D2D2D;
+      --charcoal-mid: #3D3D3D;
+      --charcoal-light: #5A5A5A;
+      --orange: #E8794A;
+      --orange-dark: #C95E30;
+      --orange-light: #FDF1EA;
+      --border: #E0D8CF;
+      --white: #FFFFFF;
+      --text-muted: #8A8078;
+    }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', Arial, sans-serif; background: #F4F7FA; color: #1A2535; line-height: 1.8; }
-    header { background: linear-gradient(135deg, #0A1628, #0D1F35); color: white; padding: 40px 24px 32px; text-align: center; }
-    header .logo { font-size: 36px; font-weight: 800; letter-spacing: -1px; color: #fff; }
-    header .sub  { font-size: 13px; color: #4ECDC4; letter-spacing: 3px; text-transform: uppercase; margin-top: 4px; }
-    header .badge { display: inline-block; margin-top: 16px; background: rgba(78,205,196,0.15); border: 1px solid rgba(78,205,196,0.4); color: #4ECDC4; padding: 6px 18px; border-radius: 20px; font-size: 12px; }
-    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
-    .card { background: #fff; border-radius: 16px; padding: 28px 32px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
-    h2 { font-size: 17px; font-weight: 700; color: #0A1628; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
-    h2 .icon { font-size: 20px; }
-    p, li { font-size: 14px; color: #3A4A5C; margin-bottom: 10px; }
-    ul { padding-left: 20px; }
-    li { margin-bottom: 6px; }
-    .highlight { background: #F0FDF9; border-left: 4px solid #4ECDC4; padding: 14px 18px; border-radius: 0 10px 10px 0; margin: 14px 0; font-size: 14px; color: #1A2535; }
-    .contact-box { background: #0A1628; color: #fff; border-radius: 14px; padding: 24px 28px; text-align: center; margin-top: 30px; }
-    .contact-box a { color: #4ECDC4; text-decoration: none; font-weight: 600; }
-    footer { text-align: center; padding: 24px; font-size: 12px; color: #8A9AAC; }
-    .badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-    .badge-item { background: #EEF2F7; border-radius: 8px; padding: 6px 14px; font-size: 12px; color: #3A4A5C; font-weight: 600; }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--charcoal);
+      padding: 64px 24px 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,121,74,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,121,74,0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-shield {
+      width: 72px; height: 72px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      box-shadow: 0 8px 32px rgba(232,121,74,0.4);
+    }
+
+    .hero-shield svg { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      color: var(--white);
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      line-height: 1.15;
+    }
+
+    .hero-sub {
+      font-size: 13px;
+      color: var(--orange);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(232,121,74,0.15);
+      border: 1px solid rgba(232,121,74,0.35);
+      color: var(--orange);
+      padding: 7px 20px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── INTRO BANNER ── */
+    .intro-banner {
+      background: var(--charcoal-mid);
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .intro-banner p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 15px;
+      color: #C8C0B8;
+      line-height: 1.8;
+    }
+
+    .intro-banner strong { color: var(--orange); }
+
+    /* ── CONTAINER ── */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 52px 24px 80px;
+    }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--white);
+      border-radius: 20px;
+      border: 1.5px solid var(--border);
+      padding: 28px 32px;
+      margin-bottom: 16px;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 32px rgba(45,45,45,0.08);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .card-icon {
+      width: 42px; height: 42px;
+      border-radius: 12px;
+      background: var(--orange-light);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .card h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      color: var(--charcoal);
+      font-weight: 400;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #4A4240;
+      line-height: 1.85;
+      margin-bottom: 12px;
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    .card ul {
+      padding-left: 0;
+      list-style: none;
+      margin-bottom: 12px;
+    }
+
+    .card ul li {
+      font-size: 14px;
+      color: #4A4240;
+      line-height: 1.8;
+      padding: 6px 0 6px 24px;
+      border-bottom: 1px solid var(--cream-dark);
+      position: relative;
+    }
+
+    .card ul li:last-child { border-bottom: none; }
+
+    .card ul li::before {
+      content: '';
+      position: absolute;
+      left: 6px; top: 50%;
+      transform: translateY(-50%);
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    .highlight {
+      background: var(--orange-light);
+      border-left: 3px solid var(--orange);
+      border-radius: 0 12px 12px 0;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 14px;
+      color: var(--charcoal);
+      font-weight: 600;
+    }
+
+    /* ── DATA TABLE ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 13px;
+    }
+
+    .data-table th {
+      background: var(--cream);
+      color: var(--charcoal-light);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    .data-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--cream-dark);
+      color: #4A4240;
+      vertical-align: middle;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .tag-no { background: #F0FDF4; color: #16A34A; }
+    .tag-yes { background: #FFF7ED; color: var(--orange-dark); }
+    .tag-local { background: #EFF6FF; color: #2563EB; }
+
+    /* ── SECTION LABEL ── */
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 40px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── CONTACT ── */
+    .contact-card {
+      background: var(--charcoal);
+      border-radius: 20px;
+      padding: 40px 32px;
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    .contact-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 26px;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      font-size: 14px;
+      color: #8A8078;
+      margin-bottom: 20px;
+    }
+
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(232,121,74,0.12);
+      border: 1.5px solid rgba(232,121,74,0.35);
+      color: var(--orange);
+      padding: 12px 24px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .contact-email:hover {
+      background: rgba(232,121,74,0.22);
+    }
+
+    .contact-location {
+      margin-top: 16px;
+      font-size: 12px;
+      color: #4A4240;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--charcoal-mid);
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: #6A6260;
+      line-height: 2;
+    }
+
+    footer a { color: var(--orange); text-decoration: none; }
+
+    /* ── FEATURE BADGES ── */
+    .badge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .badge-item {
+      background: var(--cream);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 12px;
+      color: var(--charcoal-light);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge-item svg { flex-shrink: 0; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .card { animation: fadeUp 0.4s ease both; }
+    .card:nth-child(1) { animation-delay: 0.05s; }
+    .card:nth-child(2) { animation-delay: 0.10s; }
+    .card:nth-child(3) { animation-delay: 0.15s; }
+    .card:nth-child(4) { animation-delay: 0.20s; }
+    .card:nth-child(5) { animation-delay: 0.25s; }
+    .card:nth-child(6) { animation-delay: 0.30s; }
+    .card:nth-child(7) { animation-delay: 0.35s; }
+    .card:nth-child(8) { animation-delay: 0.40s; }
+    .card:nth-child(9) { animation-delay: 0.45s; }
+
+    @media (max-width: 600px) {
+      .card { padding: 22px 20px; }
+      .contact-card { padding: 32px 20px; }
+      .data-table { font-size: 12px; }
+      .data-table th, .data-table td { padding: 8px 10px; }
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">Hileon</div>
-  <div class="sub">Budget Tracker</div>
-  <div class="badge">Privacy Policy — Effective March 27, 2026</div>
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-shield">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    </svg>
+  </div>
+  <div class="hero-sub">Hileon Budget Tracker</div>
+  <h1>Privacy Policy</h1>
+  <div class="hero-badge">Effective April 2026</div>
 </header>
 
+<!-- INTRO BANNER -->
+<div class="intro-banner">
+  <p>Hileon Budget Tracker is developed by <strong>Hileon</strong>, based in Zimbabwe. This policy explains exactly how we handle your information. <strong>Short version: your financial data never leaves your device.</strong></p>
+</div>
+
+<!-- MAIN CONTENT -->
 <div class="container">
 
+  <div class="section-label">Core Principles</div>
+
+  <!-- 1. Overview -->
   <div class="card">
-    <h2><span class="icon">📋</span> Overview</h2>
-    <p>Hileon Budget Tracker ("the App") is developed and operated by <strong>Hileon</strong>, based in Mutare, Zimbabwe. This Privacy Policy explains how we handle your information when you use our Android application.</p>
-    <div class="highlight">
-      <strong>Short version:</strong> All your financial data is stored only on your device. We do not collect, transmit, or sell your personal financial information to anyone.
+    <div class="card-header">
+      <div class="card-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8794A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <h2>Overview</h2>
+    </div>
+    <div class="highlight">Your financial data is stored exclusively on your device. We do not collect, transmit, or sell your personal financial information.</div>
+    <p>Hileon Budget Tracker ("the App") is an Android application for personal budgeting, business finance tracking, invoice management, and project cost tracking. This Privacy Policy explains what data is involved when you use the App and how it is handled.</p>
+  </div>
+
+  <!-- 2. Local Data -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8794A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <h2>Data Stored Locally on Your Device</h2>
+    </div>
+    <p>All of the following is stored exclusively on your device using local storage and <strong>never transmitted to any external server</strong>:</p>
+    <ul>
+      <li>Personal expenses, income, categories, notes and dates</li>
+      <li>Monthly budgets and spending history</li>
+      <li>Business income, expenses, invoices and inventory</li>
+      <li>Business profile information (name, phone, email, address)</li>
+      <li>Project budgets, phases, contributions and goals</li>
+      <li>Client and supplier details saved for invoice auto-fill</li>
+      <li>App preferences — language, currency, theme</li>
+      <li>Profile name (if entered by the user)</li>
+    </ul>
+  </div>
+
+  <div class="section-label">Data & Third Parties</div>
+
+  <!-- 3. Data that leaves device -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8794A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      </div>
+      <h2>Data That Leaves the Device</h2>
+    </div>
+    <p>The only information that ever leaves your device is when you voluntarily redeem a <strong>promotional/affiliate code</strong>. In that case, the code string is sent over HTTPS to a secure endpoint and logged for affiliate tracking purposes.</p>
+
+    <table class="data-table">
+      <tr>
+        <th>What is sent</th>
+        <th>Why</th>
+        <th>Stored where</th>
+        <th>Personal data?</th>
+      </tr>
+      <tr>
+        <td>Promo code string only</td>
+        <td>Affiliate tracking</td>
+        <td>Private Google Sheet (Hileon only)</td>
+        <td><span class="tag tag-no">No</span></td>
+      </tr>
+    </table>
+
+    <p style="margin-top:14px;">No financial data, no device identifiers, and no personal information of any kind is transmitted.</p>
+  </div>
+
+  <!-- 4. Third Parties -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8794A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <h2>Third-Party Services</h2>
+    </div>
+    <p>Hileon uses the following third-party services:</p>
+    <table class="data-table">
+      <tr>
+        <th>Service</th>
+        <th>Purpose</th>
+        <th>Data involved</th>
+      </tr>
+      <tr>
+        <td><strong>Google Play Billing</strong></td>
+        <td>Subscription &amp; purchase processing</td>
+        <td>Handled entirely by Google. We never see payment card details.</td>
+      </tr>
+      <tr>
+        <td><strong>Capacitor (Ionic)</strong></td>
+        <td>Local notifications, file system</td>
+        <td>Local device only. No data transmitted.</td>
+      </tr>
+    </table>
+    <p style="margin-top:14px;">Hileon contains <strong>no advertising SDKs</strong>. There are zero advertisements in the app, ever.</p>
+  </div>
+
+  <div class="section-label">Purchases & Subscriptions</div>
+
+  <!-- 5. Payments -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8794A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      </div>
+      <h2>Subscriptions &amp; Payments</h2>
+    </div>
+    <p>Hileon offers optional subscription plans. All purchases are processed entirely by <strong>Google Play Billing</strong>. Prices are shown in your local currency at checkout.</p>
+    <ul>
+      <li>We do not collect, store, or process payment card information</li>
+      <li>Subscriptions are managed through your Google Play account</li>
+      <li>Cancel at any time via Google Play → Subscriptions</li>
+      <li>Purchases restore automatically when you reinstall the app</li>
+    </ul>
+  </div>
+
+  <div class="section-label">Your Rights & Controls</div>
+
+  <!-- 6. Export & Deletion -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8794A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </div>
+      <h2>Data Export &amp; Deletion</h2>
+    </div>
+    <p>You have full control over your data at all times:</p>
+    <div class="badge-grid">
+      <div class="badge-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8794A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Export as JSON backup
+      </div>
+      <div class="badge-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8794A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Export as CSV
+      </div>
+      <div class="badge-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8794A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Delete individual records
+      </div>
+      <div class="badge-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8794A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Clear all data via uninstall
+      </div>
+      <div class="badge-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8794A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Request deletion by email
+      </div>
     </div>
   </div>
 
+  <!-- 7. No Account -->
   <div class="card">
-    <h2><span class="icon">📱</span> Data We Store Locally</h2>
-    <p>The following data is stored exclusively on your device using local storage:</p>
-    <ul>
-      <li>Personal expenses, categories, notes and dates</li>
-      <li>Business income, expenses and invoices</li>
-      <li>Budget settings and monthly budget amounts</li>
-      <li>Business profile information (name, phone, email, address)</li>
-      <li>Client details saved for invoice auto-fill</li>
-      <li>App preferences (language, currency, theme)</li>
-    </ul>
-    <p>This data <strong>never leaves your device</strong> and is not transmitted to any server operated by us.</p>
+    <div class="card-header">
+      <div class="card-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8794A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <h2>No Account Required</h2>
+    </div>
+    <p>Hileon does not require you to create an account, verify an email address, or provide any personal identity information to use the app. All features are available completely anonymously.</p>
   </div>
 
+  <div class="section-label">Additional Policies</div>
+
+  <!-- 8. Children -->
   <div class="card">
-    <h2><span class="icon">☁️</span> Data Collected by Third Parties</h2>
-    <p>The App integrates the following third-party services which may collect data according to their own privacy policies:</p>
-    <ul>
-      <li><strong>Google AdMob</strong> — serves advertisements. May collect device identifiers and usage data for ad personalisation. <a href="https://policies.google.com/privacy" target="_blank" style="color:#4ECDC4">Google Privacy Policy</a></li>
-      <li><strong>Google Play Billing</strong> — processes in-app purchases (Remove Ads, Business Premium). Purchase data is handled by Google Play. <a href="https://payments.google.com/payments/apis-secure/get_legal_document?ldo=0&ldt=privacynotice" target="_blank" style="color:#4ECDC4">Google Payments Privacy</a></li>
-    </ul>
+    <div class="card-header">
+      <div class="card-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8794A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <h2>Children's Privacy</h2>
+    </div>
+    <p>Hileon is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided personal information through the App, please contact us immediately at <a href="mailto:hileonbt@gmail.com" style="color:var(--orange);font-weight:600;">hileonbt@gmail.com</a> and we will take appropriate action.</p>
   </div>
 
+  <!-- 9. International -->
   <div class="card">
-    <h2><span class="icon">💳</span> In-App Purchases</h2>
-    <p>The App offers two optional one-time in-app purchases:</p>
-    <ul>
-      <li><strong>Remove Ads Forever</strong> — $4.99 USD</li>
-      <li><strong>Business Premium</strong> — $9.99 USD</li>
-    </ul>
-    <p>All payments are processed securely by Google Play. We do not store or access your payment card details. Purchases are tied to your Google account and restore automatically when you reinstall the app or switch devices.</p>
+    <div class="card-header">
+      <div class="card-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8794A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+      </div>
+      <h2>International Users</h2>
+    </div>
+    <p>Hileon is designed for users across Africa and worldwide — with particular focus on Zimbabwe, Mozambique, South Africa, Kenya, and Ethiopia. The App supports <strong>6 languages</strong> and <strong>150+ currencies</strong>. Your data remains on your device regardless of your location.</p>
   </div>
 
+  <!-- 10. Changes -->
   <div class="card">
-    <h2><span class="icon">🔒</span> Data Security</h2>
-    <p>Since all financial data is stored locally on your device, the security of your data depends on the security of your device. We recommend:</p>
-    <ul>
-      <li>Using a screen lock (PIN, fingerprint or pattern)</li>
-      <li>Keeping your Android OS up to date</li>
-      <li>Using the CSV export feature to back up your data regularly</li>
-    </ul>
+    <div class="card-header">
+      <div class="card-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8794A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+      </div>
+      <h2>Changes to This Policy</h2>
+    </div>
+    <p>We may update this Privacy Policy from time to time as the app evolves. Any changes will be reflected with an updated effective date at the top of this page. Continued use of Hileon after changes constitutes your acceptance of the revised policy.</p>
   </div>
 
-  <div class="card">
-    <h2><span class="icon">👶</span> Children's Privacy</h2>
-    <p>The App is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided personal information through the App, please contact us.</p>
-  </div>
-
-  <div class="card">
-    <h2><span class="icon">🌍</span> International Users</h2>
-    <p>Hileon Budget Tracker is designed for users across Africa and worldwide, including Zimbabwe, Mozambique, South Africa, Kenya, and Ethiopia. The App supports 6 languages and 150+ currencies. Your data remains on your device regardless of your location.</p>
-  </div>
-
-  <div class="card">
-    <h2><span class="icon">📤</span> Data Export & Deletion</h2>
-    <p>You have full control over your data:</p>
-    <ul>
-      <li><strong>Export</strong> — Use the CSV Export feature in Settings to download all your data at any time</li>
-      <li><strong>Delete</strong> — Clear all data by uninstalling the App, which removes all locally stored data from your device</li>
-      <li><strong>Individual records</strong> — Delete any transaction, invoice or record individually within the App</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2><span class="icon">🔄</span> Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Any changes will be reflected with an updated effective date at the top of this page. Continued use of the App after changes constitutes acceptance of the revised policy.</p>
-  </div>
-
-  <div class="contact-box">
-    <div style="font-size:24px;margin-bottom:10px;">📩</div>
-    <div style="font-weight:800;font-size:16px;margin-bottom:6px;">Questions or Concerns?</div>
-    <div style="font-size:13px;color:#8ABCCC;margin-bottom:12px;">We're happy to help with any privacy-related questions.</div>
-    <a href="mailto:hileonint@gmail.com">hileonint@gmail.com</a>
-    <div style="font-size:12px;color:#556677;margin-top:10px;">Hileon · Mutare, Zimbabwe</div>
+  <!-- CONTACT -->
+  <div class="contact-card">
+    <div style="width:52px;height:52px;border-radius:16px;background:rgba(232,121,74,0.15);border:1.5px solid rgba(232,121,74,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8794A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    </div>
+    <h3>Questions or Concerns?</h3>
+    <p>We're happy to help with any privacy-related questions.</p>
+    <a href="mailto:hileonbt@gmail.com" class="contact-email">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#E8794A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      hileonbt@gmail.com
+    </a>
+    <div class="contact-location">Hileon · Zimbabwe</div>
   </div>
 
 </div>
 
+<!-- FOOTER -->
 <footer>
-  &copy; 2026 Hileon Budget Tracker · All rights reserved · <a href="mailto:hileonint@gmail.com" style="color:#4ECDC4;">hileonint@gmail.com</a>
+  <p>
+    © 2026 Hileon Budget Tracker · All rights reserved<br/>
+    <a href="mailto:hileonbt@gmail.com">hileonbt@gmail.com</a> · Zimbabwe
+  </p>
 </footer>
 
 </body>
